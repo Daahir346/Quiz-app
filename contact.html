@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | QuizMaster</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Contact Page Specific Styles */
+    :root {
+      --primary: #4361ee;
+      --primary-dark: #3a56d4;
+      --secondary: #7209b7;
+      --success: #4cc9f0;
+      --danger: #f72585;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --gray: #6c757d;
+      --gray-light: #e9ecef;
+      --border-radius: 12px;
+      --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navigation */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo::before {
+      content: "🧠";
+      font-size: 1.5rem;
+    }
+
+    .navbar ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .navbar a:hover {
+      color: var(--primary);
+      background: var(--gray-light);
+    }
+
+    .navbar a.active {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .navbar a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    /* Contact Page */
+    .contact-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 5%;
+      flex: 1;
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: white;
+    }
+
+    .contact-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .contact-form {
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 3rem;
+      box-shadow: var(--box-shadow);
+      margin-bottom: 3rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid var(--gray-light);
+      border-radius: var(--border-radius);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+      width: 100%;
+      justify-content: center;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    /* Contact Info */
+    .contact-info {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-light);
+    }
+
+    .contact-info h3 {
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--light);
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+
+    .info-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .info-content h4 {
+      margin-bottom: 0.25rem;
+      color: var(--dark);
+    }
+
+    .info-content p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 3rem 5%;
+      margin-top: auto;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 1.5rem;
+      color: var(--success);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: var(--transition);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--gray);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      .navbar ul {
+        gap: 1rem;
+      }
+      
+      .contact-header h1 {
+        font-size: 2rem;
+      }
+      
+      .contact-form {
+        padding: 2rem;
+      }
+      
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    /* Loading Animation */
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Success Message */
+    .success-message {
+      background: #d4edda;
+      color: #155724;
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      margin-top: 1rem;
+      text-align: center;
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .success-message.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <span>QuizMaster</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="quiz.html">Take Quiz</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Page -->
+  <div class="contact-container">
+    <div class="contact-header fade-in">
+      <h1>Get In Touch</h1>
+      <p>Have questions or feedback? We'd love to hear from you!</p>
+    </div>
+
+    <div class="contact-form fade-in">
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your full name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email address" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="What is this regarding?" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" placeholder="Type your message here..." required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+        
+        <div id="successMessage" class="success-message">
+          <i class="fas fa-check-circle"></i> Message sent successfully! We'll get back to you soon.
+        </div>
+      </form>
+    </div>
+
+    <div class="contact-info fade-in">
+      <h3>Other Ways to Reach Us</h3>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="info-content">
+            <h4>Email Us</h4>
+            <p>support@quizmaster.com</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="info-content">
+            <h4>Call Us</h4>
+            <p>+1 (555) 123-4567</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="info-content">
+            <h4>Visit Us</h4>
+            <p>123 University Drive<br>Tech City, TC 12345</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="info-content">
+            <h4>Business Hours</h4>
+            <p>Mon-Fri: 9AM-6PM<br>Sat-Sun: 10AM-4PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>QuizMaster</h3>
+        <p>An interactive platform for testing and improving your knowledge through engaging quizzes.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="quiz.html">Take Quiz</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+          <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2026 QuizMaster. All rights reserved. | University Project</p>
+    </div>
+  </footer>
+
+  <script>
+    // Contact Form Handling
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contactForm');
+      const successMessage = document.getElementById('successMessage');
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          subject: document.getElementById('subject').value,
+          message: document.getElementById('message').value
+        };
+        
+        // Validate form
+        if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+          alert('Please fill in all fields');
+          return;
+        }
+        
+        // Show loading state
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span class="loading"></span> Sending...';
+        submitBtn.disabled = true;
+        
+        // Simulate API call (replace with actual API call in production)
+        try {
+          await new Promise(resolve => setTimeout(resolve, 1500));
+          
+          // Show success message
+          successMessage.classList.add('show');
+          
+          // Reset form
+          contactForm.reset();
+          
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            successMessage.classList.remove('show');
+          }, 5000);
+          
+        } catch (error) {
+          alert('Error sending message. Please try again.');
+          console.error('Form submission error:', error);
+        } finally {
+          // Reset button
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }
+      });
+      
+      // Add input animations
+      const inputs = contactForm.querySelectorAll('input, textarea');
+      inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+          this.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', function() {
+          if (!this.value) {
+            this.parentElement.classList.remove('focused');
+          }
+        });
+      });
+      
+      // Set active nav link
+      const currentPage = window.location.pathname.split('/').pop();
+      const navLinks = document.querySelectorAll('.navbar a');
+      
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

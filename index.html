@@ -1,103 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QuizMaster | Test Your Knowledge</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/modern.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster - Test Your Knowledge</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/icons/quiz-icon.png">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="logo">
-      <span>QuizMaster</span>
-    </div>
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="quiz.html">Take Quiz</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-brain"></i> QuizMaster
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="quiz.html">Take Quiz</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content fade-in">
-      <h1>Challenge Your Mind With Interactive Quizzes</h1>
-      <p>Test your knowledge across various topics with our engaging quiz platform. Perfect for learning, practice, or just having fun!</p>
-      <div class="hero-buttons">
-        <a href="quiz.html" class="btn btn-primary">
-          <i class="fas fa-play-circle"></i> Start Quiz Now
-        </a>
-        <a href="#features" class="btn btn-secondary">
-          <i class="fas fa-info-circle"></i> Learn More
-        </a>
-      </div>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Test Your Knowledge with <span class="highlight">QuizMaster</span></h1>
+                <p>Challenge yourself with our interactive quizzes on various topics including religion, science, geography, and more!</p>
+                <a href="quiz.html" class="btn btn-primary">
+                    Start Quiz Now <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Quiz Illustration">
+            </div>
+        </div>
+    </section>
 
-  <!-- Features Section -->
-  <section id="features" class="features">
-    <h2 class="section-title">Why Choose QuizMaster?</h2>
-    <div class="features-grid">
-      <div class="feature-card fade-in">
-        <div class="feature-icon">🎯</div>
-        <h3>Instant Feedback</h3>
-        <p>Get immediate results with detailed explanations for each answer.</p>
-      </div>
-      <div class="feature-card fade-in">
-        <div class="feature-icon">📊</div>
-        <h3>Progress Tracking</h3>
-        <p>Monitor your improvement with detailed statistics and progress reports.</p>
-      </div>
-      <div class="feature-card fade-in">
-        <div class="feature-icon">🎨</div>
-        <h3>Modern Design</h3>
-        <p>Enjoy a clean, responsive interface that works on all devices.</p>
-      </div>
-      <div class="feature-card fade-in">
-        <div class="feature-icon">⚡</div>
-        <h3>Fast & Reliable</h3>
-        <p>Quick loading times and smooth experience without interruptions.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Quiz Categories</h2>
+            <div class="category-grid">
+                <div class="category-card" style="background: linear-gradient(135deg, #4cc9f0, #4361ee);">
+                    <i class="fas fa-mosque"></i>
+                    <h3>Religious Questions</h3>
+                    <p>Test your knowledge about Islam and other religions</p>
+                    <a href="quiz.html?category=religion" class="btn btn-outline">Start Quiz</a>
+                </div>
+                <div class="category-card" style="background: linear-gradient(135deg, #f72585, #b5179e);">
+                    <i class="fas fa-globe-africa"></i>
+                    <h3>Science & Geography</h3>
+                    <p>Explore planets, countries, and scientific facts</p>
+                    <a href="quiz.html?category=science" class="btn btn-outline">Start Quiz</a>
+                </div>
+                <div class="category-card" style="background: linear-gradient(135deg, #f8961e, #f3722c);">
+                    <i class="fas fa-history"></i>
+                    <h3>History & Culture</h3>
+                    <p>Learn about historical events and cultural heritage</p>
+                    <a href="quiz.html" class="btn btn-outline">Start Quiz</a>
+                </div>
+                <div class="category-card" style="background: linear-gradient(135deg, #90be6d, #43aa8b);">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>General Knowledge</h3>
+                    <p>Challenge yourself with mixed questions</p>
+                    <a href="quiz.html" class="btn btn-outline">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>QuizMaster</h3>
-        <p>An interactive platform for testing and improving your knowledge through engaging quizzes.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="quiz.html">Take Quiz</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Contact Info</h3>
-        <ul class="footer-links">
-          <li><i class="fas fa-envelope"></i> info@ali.com</li>
-          <li><i class="fas fa-phone"></i> +252 619126338</li>
-          <li><i class="fas fa-map-marker-alt"></i> mogadishu</li>
-        </ul>
-      </div>
-    </div>
-    <div class="copyright">
-      <p>© 2026 QuizMaster. All rights reserved.</p>
-    </div>
-  </footer>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose QuizMaster?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-stopwatch"></i>
+                    <h3>Timed Quizzes</h3>
+                    <p>Challenge yourself with timed quizzes to improve quick thinking.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Track Progress</h3>
+                    <p>Monitor your scores and see improvements over time.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Learn & Improve</h3>
+                    <p>Detailed explanations help you learn from your mistakes.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access quizzes on any device, anytime, anywhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="js/script.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-brain"></i> QuizMaster</h3>
+                    <p>An interactive platform to test and expand your knowledge across various subjects.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="quiz.html">Take Quiz</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@quizmaster.com</p>
+                    <p><i class="fas fa-phone"></i> +252 61 123 4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 QuizMaster. All rights reserved. | Designed with <i class="fas fa-heart"></i> for knowledge seekers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

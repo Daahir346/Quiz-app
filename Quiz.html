@@ -1,144 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Take Quiz | QuizMaster</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/modern.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster - Test Your Knowledge</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/icons/quiz-icon.png">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="logo">
-      <span>QuizMaster</span>
-    </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="quiz.html" class="active">Take Quiz</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-brain"></i> QuizMaster
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="quiz.html" class="active">Take Quiz</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-  <!-- Quiz Page -->
-  <section class="quiz-page">
-    <div class="quiz-header">
-      <h1>Web Development Quiz</h1>
-      <p>Test your knowledge of HTML, CSS, and JavaScript</p>
-      
-      <div class="quiz-progress">
-        <div class="progress-bar"></div>
-      </div>
+    <!-- Quiz Header -->
+    <header class="quiz-header">
+        <div class="container">
+            <div class="quiz-info">
+                <h1>Interactive Quiz Challenge</h1>
+                <p>Test your knowledge across multiple subjects. You have 10 minutes to complete the quiz!</p>
+            </div>
+            <div class="quiz-stats">
+                <div class="stat">
+                    <i class="fas fa-question-circle"></i>
+                    <span id="total-questions">12 Questions</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-stopwatch"></i>
+                    <span id="timer">10:00</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-trophy"></i>
+                    <span id="score">Score: 0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="current-question">1</span> of <span id="total-questions-text">12</span> Questions
+            </div>
+        </div>
     </div>
 
     <!-- Quiz Container -->
-    <div class="quiz-container" id="quiz">
-      <div class="question-header">
-        <div class="question-counter">Question 1 of 4</div>
-        <div class="timer">
-          <i class="fas fa-clock"></i>
-          <span id="timer">10:00</span>
+    <main class="container">
+        <div id="quiz-container">
+            <!-- Quiz content will be loaded by JavaScript -->
         </div>
-      </div>
+    </main>
 
-      <h2 id="question">Question will appear here</h2>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-brain"></i> QuizMaster</h3>
+                    <p>An interactive platform to test and expand your knowledge across various subjects.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="quiz.html">Take Quiz</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@quizmaster.com</p>
+                    <p><i class="fas fa-phone"></i> +252 61 123 4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 QuizMaster. All rights reserved. | Designed with <i class="fas fa-heart"></i> for knowledge seekers</p>
+            </div>
+        </div>
+    </footer>
 
-      <div class="options-grid">
-        <label class="option-label">
-          <input type="radio" name="answer" value="a">
-          <span id="a_text">Option A</span>
-        </label>
-        <label class="option-label">
-          <input type="radio" name="answer" value="b">
-          <span id="b_text">Option B</span>
-        </label>
-        <label class="option-label">
-          <input type="radio" name="answer" value="c">
-          <span id="c_text">Option C</span>
-        </label>
-        <label class="option-label">
-          <input type="radio" name="answer" value="d">
-          <span id="d_text">Option D</span>
-        </label>
-      </div>
-
-      <div class="quiz-controls">
-        <button id="prev" class="btn btn-secondary">
-          <i class="fas fa-arrow-left"></i> Previous
-        </button>
-        
-        <p id="error" class="error-message"></p>
-        
-        <button id="submit" class="btn btn-primary">
-          Submit Answer <i class="fas fa-check-circle"></i>
-        </button>
-        
-        <button id="next" class="btn btn-secondary">
-          Next <i class="fas fa-arrow-right"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Results Container (Initially Hidden) -->
-    <div class="results-container" style="display: none;">
-      <h2>Quiz Completed!</h2>
-      <p>Here's how you performed:</p>
-      
-      <div class="score-circle">
-        <div class="score-text">0/4</div>
-      </div>
-      
-      <h3>Your Score: <span id="finalScore">0</span>/<span id="totalQuestions">4</span></h3>
-      
-      <div class="results-actions">
-        <button id="restartQuiz" class="btn btn-primary">
-          <i class="fas fa-redo"></i> Restart Quiz
-        </button>
-        <a href="index.html" class="btn btn-secondary">
-          <i class="fas fa-home"></i> Back to Home
-        </a>
-      </div>
-      
-      <div id="resultsDetails" class="results-details"></div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>QuizMaster</h3>
-        <p>An interactive platform for testing and improving your knowledge through engaging quizzes.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="quiz.html">Take Quiz</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Contact Info</h3>
-        <ul class="footer-links">
-          <li><i class="fas fa-envelope"></i> info@ali.com</li>
-          <li><i class="fas fa-phone"></i> +252 619126338</li>
-          <li><i class="fas fa-map-marker-alt"></i> mogadishu</li>
-        </ul>
-      </div>
-    </div>
-    <div class="copyright">
-      <p>© 2026 QuizMaster. All rights reserved. </p>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
-  <script src="js/modern.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +20,8 @@
                 <i class="fas fa-brain"></i> QuizMaster
             </a>
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="quiz.html">Take Quiz</a>
+                <a href="index.html">Home</a>
+                <a href="quiz.html" class="active">Take Quiz</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </div>
@@ -28,83 +31,48 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Quiz Header -->
+    <header class="quiz-header">
         <div class="container">
-            <div class="hero-content">
-                <h1>Test Your Knowledge with <span class="highlight">QuizMaster</span></h1>
-                <p>Challenge yourself with our interactive quizzes on various topics including religion, science, geography, and more!</p>
-                <a href="quiz.html" class="btn btn-primary">
-                    Start Quiz Now <i class="fas fa-arrow-right"></i>
-                </a>
+            <div class="quiz-info">
+                <h1>Interactive Quiz Challenge</h1>
+                <p>Test your knowledge across multiple subjects. You have 10 minutes to complete the quiz!</p>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Quiz Illustration">
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="section-title">Quiz Categories</h2>
-            <div class="category-grid">
-                <div class="category-card" style="background: linear-gradient(135deg, #4cc9f0, #4361ee);">
-                    <i class="fas fa-mosque"></i>
-                    <h3>Religious Questions</h3>
-                    <p>Test your knowledge about Islam and other religions</p>
-                    <a href="quiz.html?category=religion" class="btn btn-outline">Start Quiz</a>
+            <div class="quiz-stats">
+                <div class="stat">
+                    <i class="fas fa-question-circle"></i>
+                    <span id="total-questions">12 Questions</span>
                 </div>
-                <div class="category-card" style="background: linear-gradient(135deg, #f72585, #b5179e);">
-                    <i class="fas fa-globe-africa"></i>
-                    <h3>Science & Geography</h3>
-                    <p>Explore planets, countries, and scientific facts</p>
-                    <a href="quiz.html?category=science" class="btn btn-outline">Start Quiz</a>
-                </div>
-                <div class="category-card" style="background: linear-gradient(135deg, #f8961e, #f3722c);">
-                    <i class="fas fa-history"></i>
-                    <h3>History & Culture</h3>
-                    <p>Learn about historical events and cultural heritage</p>
-                    <a href="quiz.html" class="btn btn-outline">Start Quiz</a>
-                </div>
-                <div class="category-card" style="background: linear-gradient(135deg, #90be6d, #43aa8b);">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>General Knowledge</h3>
-                    <p>Challenge yourself with mixed questions</p>
-                    <a href="quiz.html" class="btn btn-outline">Start Quiz</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Why Choose QuizMaster?</h2>
-            <div class="features-grid">
-                <div class="feature">
+                <div class="stat">
                     <i class="fas fa-stopwatch"></i>
-                    <h3>Timed Quizzes</h3>
-                    <p>Challenge yourself with timed quizzes to improve quick thinking.</p>
+                    <span id="timer">10:00</span>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Track Progress</h3>
-                    <p>Monitor your scores and see improvements over time.</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Learn & Improve</h3>
-                    <p>Detailed explanations help you learn from your mistakes.</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Mobile Friendly</h3>
-                    <p>Access quizzes on any device, anytime, anywhere.</p>
+                <div class="stat">
+                    <i class="fas fa-trophy"></i>
+                    <span id="score">Score: 0</span>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="current-question">1</span> of <span id="total-questions-text">12</span> Questions
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Container -->
+    <main class="container">
+        <div id="quiz-container">
+            <!-- Quiz content will be loaded by JavaScript -->
+        </div>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -136,3 +104,6 @@
     <script src="js/script.js"></script>
 </body>
 </html>
+
+
+
